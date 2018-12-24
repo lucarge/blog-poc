@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
@@ -81,6 +83,15 @@ module.exports = {
         jsxPragma: `React`,
         allExtensions: true,
       },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@blog': path.resolve(__dirname, 'src'),
+        },
+        extensions: []
+      }
     },
   ],
 }

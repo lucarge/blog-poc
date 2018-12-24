@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from '../components/Layout'
-import Seo from '../components/Seo'
+import Layout from '@blog/components/Layout'
+import Seo from '@blog/components/Seo'
 
 type Props = {
   location: {
