@@ -72,7 +72,7 @@ const Layout: React.FunctionComponent<Props> = ({ children, location, title }) =
           }}
           to={`/`}
         >
-          {title}
+          🏡
         </Link>
       </h3>
 

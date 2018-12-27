@@ -27,8 +27,8 @@ const renderQuery = ({ avatar, site: { siteMetadata: { author, social: { twitter
     }}
   >
     <Image
-      fixed={avatar.childImageSharp.fixed}
       alt={author}
+      fixed={avatar.childImageSharp.fixed}
       style={{
         marginRight: rhythm(1 / 2),
         marginBottom: 0,
@@ -37,8 +37,7 @@ const renderQuery = ({ avatar, site: { siteMetadata: { author, social: { twitter
       }}
     />
     <p>
-      Written by <strong>{author}</strong> who lives and works in San
-      Francisco building useful things.
+      Written by <strong>{author}</strong> who lives and works in Milan building useful things.
       {` `}
       <a href={`https://twitter.com/${twitter}`}>
         You should follow him on Twitter
