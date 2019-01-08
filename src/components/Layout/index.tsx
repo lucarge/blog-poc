@@ -20,7 +20,7 @@ const Layout: React.FunctionComponent<Props> = ({ children, location, title }) =
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(24),
+          maxWidth: rhythm(36),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
@@ -53,7 +53,7 @@ const Layout: React.FunctionComponent<Props> = ({ children, location, title }) =
       style={{
         marginLeft: `auto`,
         marginRight: `auto`,
-        maxWidth: rhythm(24),
+        maxWidth: rhythm(36),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >

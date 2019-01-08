@@ -1,46 +1,47 @@
-type GoogleFontsType = { name: string; styles: string[] }
-
-type VerticalRhythmType = {
-  rhythm: (value: number) => string
-  scale: (value: number) => Object
-  adjustFontSizeTo: (value?: number | string) => Object
+type TGoogleFonts = {
+  name: string,
+  styles: string[],
 }
 
-type OptionsType = {
-  title: string
-  baseFontSize?: string
-  baseLineHeight?: number
-  scaleRatio?: number
-  googleFonts?: GoogleFontsType[]
-  headerFontFamily?: string[]
-  bodyFontFamily?: string[]
-  headerColor?: string
-  bodyColor?: string
-  headerWeight?: number | string
-  bodyWeight?: number | string
-  boldWeight?: number | string
-  blockMarginBottom?: number
-  includeNormalize?: boolean
-  overrideStyles?: (
-    verticalRhythm: VerticalRhythmType, // TODO Create flow type for compass-vertical-rhythm and import here.
-    options: OptionsType,
-    styles: any
-  ) => Object
-  overrideThemeStyles?: (
-    verticalRhythm: VerticalRhythmType, // TODO Create flow type for compass-vertical-rhythm and import here.
-    options: OptionsType,
-    styles: any
-  ) => Object
-  plugins?: any[]
+type TOptions = {
+  baseFontSize?: string,
+  baseLineHeight?: number,
+  blockMarginBottom?: number,
+  bodyColor?: string,
+  bodyFontFamily?: string[],
+  bodyWeight?: number | string,
+  boldWeight?: number | string,
+  googleFonts?: TGoogleFonts[],
+  headerColor?: string,
+  headerFontFamily?: string[],
+  headerWeight?: number | string,
+  includeNormalize?: boolean,
+  overrideStyles?: (verticalRhythm: TVerticalRhythm, options: TOptions, styles: any) => Object,
+  overrideThemeStyles?: (verticalRhythm: TVerticalRhythm, options: TOptions, styles: any) => Object,
+  plugins?: any[],
+  scaleRatio?: number,
+  title: string,
+}
+
+type TScale = {
+  fontSize: string,
+  lineHeight: string,
+}
+
+type TVerticalRhythm = {
+  adjustFontSizeTo: (value?: number | string) => Object,
+  rhythm: (value: number) => string,
+  scale: (value: number) => TScale,
 }
 
 declare module 'typography' {
   class Typography {
-    constructor(options?: OptionsType)
-    rhythm: (value: number) => string
-    scale: (value: number) => Object
+    constructor(options?: TOptions)
     adjustFontSizeTo: (value?: number | string) => Object
     injectStyles: () => void
+    rhythm: (value: number) => string
+    scale: (value: number) => TScale
   }
+
   export = Typography
 }

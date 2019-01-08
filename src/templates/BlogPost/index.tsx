@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Bio from '@blog/components/Bio'
 import Layout from '@blog/components/Layout'
-import SEO from '@blog/components/Seo'
+import Seo from '@blog/components/Seo'
 import { rhythm, scale } from '@blog/utils/typography'
 
 type Props = {
@@ -71,7 +71,7 @@ const BlogPostTemplate: React.FunctionComponent<Props> = ({
   pageContext: { previous, next },
 }) => (
   <Layout location={location} title={markdownRemark.frontmatter.title}>
-    <SEO title={markdownRemark.frontmatter.title} description={markdownRemark.excerpt} />
+    <Seo title={markdownRemark.frontmatter.title} description={markdownRemark.excerpt} />
     <h1>{markdownRemark.frontmatter.title}</h1>
     <p
       style={{
